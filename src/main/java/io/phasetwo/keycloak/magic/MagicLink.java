@@ -107,8 +107,9 @@ public class MagicLink {
     log.infof("realm %s session.context.realm %s", realm.getName(), r.getName());
     // Because of the risk, throw an exception for master realm
     if (Config.getAdminRealm().equals(realm.getName())) {
-      throw new IllegalStateException(
-          String.format("Magic links not allowed for %s realm", Config.getAdminRealm()));
+//      throw new IllegalStateException(
+//          String.format("Magic links not allowed for %s realm", Config.getAdminRealm()));
+      log.infof("realm %s is the admin realm, be cautious.", realm.getName());
     }
     session.getContext().setRealm(realm);
 

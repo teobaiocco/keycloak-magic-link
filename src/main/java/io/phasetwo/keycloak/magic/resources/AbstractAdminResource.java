@@ -1,7 +1,5 @@
 package io.phasetwo.keycloak.magic.resources;
 
-import javax.validation.constraints.*;
-import javax.ws.rs.*;
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.core.Context;
@@ -59,7 +57,7 @@ public abstract class AbstractAdminResource {
         new AdminEventBuilder(this.realm, auth, session, session.getContext().getConnection())
             .realm(realm);
     event =
-        new EventBuilder​(this.realm, session, clientConnection).realm(realm);
+        new EventBuilder(this.realm, session, clientConnection).realm(realm);
   }
 
   private void setupPermissions() {
